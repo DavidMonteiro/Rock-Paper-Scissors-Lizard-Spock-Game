@@ -2,12 +2,19 @@ console.log("This is running :D");
 
 function runGame() {
     let userPlay = this.getAttribute("id");
-    console.log(userPlay);
+    let computerPlay = getComputerPlay();
+
+    console.log('userplay: ', userPlay);
+    console.log('computerPlay: ', computerPlay);
 }
 
 function checkPlays() { }
 
-function getComputerPlay() { }
+function getComputerPlay() {
+    let computerPlay = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+    let randomIndex = Math.floor(Math.random() * computerPlay.length);
+    return computerPlay[randomIndex];
+}
 
 function updateScoreBoard() { }
 
