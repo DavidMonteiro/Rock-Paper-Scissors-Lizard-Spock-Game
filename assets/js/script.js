@@ -1,4 +1,8 @@
 console.log("This is running :D");
+var userScore;
+var computerScore;
+
+
 
 function runGame() {
     let userPlay = this.getAttribute("id");
@@ -8,6 +12,7 @@ function runGame() {
     console.log('computerPlay: ', computerPlay);
 
     let result = checkPlays(userPlay, computerPlay);
+    updateScoreBoard(result);
 
     switch (result) {
         case 1:
@@ -56,7 +61,33 @@ function getComputerPlay() {
     return computerPlay[randomIndex];
 }
 
-function updateScoreBoard() { }
+//Generate the score section when the page initially loads
+function setScoreBoard() {
+    userScore = 0;
+    computerScore = 0;
+
+    let scoreBoard = document.getElementById("score-board");
+    scoreBoard.innerHTML = `
+        <p>Score: 
+            <spam>You ${userScore}</spam> - 
+            <spam>${computerScore} Computer</spam>
+        </p>`;
+    console.log("event is working ");
+}
+function updateScoreBoard(winner) {
+    if (winner === 1) {
+        userScore += 1;
+    }
+    else if (winner === 2) {
+        computerScore += 1;
+    }
+    let scoreBoard = document.getElementById("score-board");
+    scoreBoard.innerHTML = `
+        <p>Score: 
+            <spam>You ${userScore}</spam> - 
+            <spam>${computerScore} Computer</spam>
+        </p>`;
+}
 
 function displayResult() { }
 
@@ -64,3 +95,6 @@ let buttons = document.getElementsByClassName("btn-play");
 for (let button of buttons) {
     button.addEventListener('click', runGame);
 }
+
+let scoreBoard = document.getElementById("score-board");
+scoreBoard.addEventListener("DOMContentLoaded", setScoreBoard());
