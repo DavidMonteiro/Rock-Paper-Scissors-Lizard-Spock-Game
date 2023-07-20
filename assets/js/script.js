@@ -1,11 +1,19 @@
 console.log("This is running :D");
 
-function runGame () {}
+function runGame() {
+    let userPlay = this.getAttribute("id");
+    console.log(userPlay);
+}
 
-function checkPlays () {}
+function checkPlays() { }
 
-function getComputerPlay () {}
+function getComputerPlay() { }
 
-function updateScoreBoard () {}
+function updateScoreBoard() { }
 
-function displayResult () {}
+function displayResult() { }
+
+let buttons = document.getElementsByClassName("btn-play");
+for (let button of buttons) {
+    button.addEventListener('click', runGame);
+}
