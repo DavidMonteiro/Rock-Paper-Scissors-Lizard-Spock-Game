@@ -2,7 +2,7 @@ body {
     background: FloralWhite;
 }
 
-.control-area {
+#control-area {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
