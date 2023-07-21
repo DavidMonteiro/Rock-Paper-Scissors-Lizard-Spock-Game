@@ -7,8 +7,8 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: black;
-    color: white;
+    background-color: #ECF2FF;
+    color: black;
     justify-content: center;
 }
 
@@ -34,6 +34,7 @@ header div p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #3E54AC;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -61,12 +62,16 @@ header div p {
 }
 
 /* Game result section */
+#battle-section {
+    background-color: FloralWhite;
+}
+
 .battle-result {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid green;
+    border: 2px solid #3E54AC;
     border-radius: 50px;
     padding: 20px;
     margin: 50px;
@@ -112,4 +117,30 @@ header div p {
     font-size: 18px;
     font-weight: bold;
     margin: auto;
+}
+
+/* Reset section */
+#reset-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 20px;
+}
+
+.btn-reset {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #3E54AC;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #655DBB;
 }

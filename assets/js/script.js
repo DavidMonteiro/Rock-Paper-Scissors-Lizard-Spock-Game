@@ -171,6 +171,12 @@ function displayResult(userPlay, computerPlay, resultMessage) {
     battleResult.innerHTML = html;
 }
 
+function resetGame() {
+    setScoreBoard();
+    let battleResult = document.getElementById("battle-section");
+    battleResult.innerHTML = "";
+}
+
 let buttons = document.getElementsByClassName("btn-play");
 for (let button of buttons) {
     button.addEventListener('click', runGame);

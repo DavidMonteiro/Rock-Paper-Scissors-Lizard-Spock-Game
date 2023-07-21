@@ -1,11 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
-
 ## Description
 
 Welcome to the Rock, Paper, Scissors, Spock, Lizard Fun Game! This is a variant of the classic Rock, Paper, Scissors game, which includes two additional options: Spock and Lizard.
@@ -20,15 +12,28 @@ The game follows the rules below:
 ## Preview
 
 ## How to Play
+1.	Open the website and view the header section with the logo and game title.
+2.	In the "Game Control" section, you'll find buttons for Rock, Paper, Scissors, Spock, and Lizard.
+3.	Click on one of the buttons to select your move. The computer will automatically make its move.
+4.	The result of each round will be displayed in the battle section, showing both choices and the outcome. 
+5.	The Score section will keep track of your score against the computer.
+
+## Technologies Used
+The website was built using HTML, CSS, and JavaScript.
 
 ## Styling
-
+The website features a clean and visually appealing design. The header section displays a logo and a bold game title, while the game control area has circular buttons with images representing each choice. The battle section shows the chosen moves and the outcome in a nicely formatted manner. The score section keeps track of your score against the computer.
 ## How to Run
+1.	Download or clone the project repository from GitHub.
+2.	Open the index.html file in your web browser.
+3.	Start playing the game and have fun!
+
 
 ## Credits
-
+This project is inspired by the classic Rock, Paper, Scissors game and extended with the Spock and Lizard choices. Believed to have been first seen in the TV show "The Big Bang Theory." It was created by the character Sheldon Cooper in the second season, episode 8, titled "The Lizard-Spock Expansion."
 ## Contributions
 
 ## License
 
 ## Contact
+For any questions or inquiries, please contact me, David Monteiro at david.frtd.monteiro@gmail.com.
