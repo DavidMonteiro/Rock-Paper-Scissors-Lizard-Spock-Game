@@ -12,14 +12,19 @@ function runGame() {
     console.log('computerPlay: ', computerPlay);
 
     let result = checkPlays(userPlay, computerPlay);
+    let resultMessage = "";
     updateScoreBoard(result);
 
     switch (result) {
         case 1:
+            resultMessage = generateResultText(userPlay, computerPlay);
+            console.log(resultMessage);
             console.log('You win!');
             break;
         case 2:
+            resultMessage = generateResultText(computerPlay, userPlay);
             console.log('Computer wins!');
+            console.log(resultMessage);
             break;
         default:
             console.log('It\'s a tie! Play again.');
@@ -87,6 +92,64 @@ function updateScoreBoard(winner) {
             <spam>You ${userScore}</spam> - 
             <spam>${computerScore} Computer</spam>
         </p>`;
+}
+
+function generateResultText(winner, loser) {
+    //just in case
+    // This function will generate the message which will then be displayed in the result/battle section
+    let result = "";
+
+    switch (winner) {
+        case "rock":
+            if (loser === "scissors") {
+                result = "Rock crushes scissors.";
+            }
+            else if (loser === "lizard") {
+                result = "Rock crushes lizard.";
+            }
+            break;
+
+        case "paper":
+            if (loser === "rock") {
+                result = "Paper covers rock.";
+            }
+            else if (loser === "Spock") {
+                result = "Paper disproves Spock.";
+            }
+            break;
+
+        case "scissors":
+            if (loser === "paper") {
+                result = "Scissors cuts paper.";
+            }
+            else if (loser === "lizard") {
+                result = "Scissors decapitates lizard.";
+            }
+            break;
+
+        case "lizard":
+            if (loser === "paper") {
+                result = "Lizard eats paper.";
+            }
+            else if (loser === "spock") {
+                result = "Lizard poisons Spock.";
+            }
+            break;
+
+        case "spock":
+            if (loser === "scissors") {
+                result = "Spock smashes scissors.";
+            }
+            else if (loser === "rock") {
+                result = "Spock vaporizes rock.";
+            }
+            break;
+
+        default:
+            result = "Invalid combination.";
+    }
+
+    return result;
 }
 
 function displayResult() { }
