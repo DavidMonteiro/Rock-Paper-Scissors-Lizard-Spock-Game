@@ -2,6 +2,26 @@ body {
     background: FloralWhite;
 }
 
+/*Header section */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+header p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*Control area section */
 #control-area {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +50,7 @@ body {
     border-radius: 50%;
 }
 
+/* Game result section */
 .battle-area {
     display: flex;
     align-items: center;
@@ -57,6 +78,7 @@ body {
     padding: 10px;
 }
 
+/*Score section */
 #score-board {
     background-color: white;
     border: 2px solid black;
