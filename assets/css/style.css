@@ -59,16 +59,26 @@ header div p {
 }
 
 /* Game result section */
-.battle-area {
+.battle-result {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 2px solid green;
     border-radius: 50px;
     padding: 20px;
+    margin: 50px;
 }
 
-.battle-area img {
+.battle-result-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.battle-result-image img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -79,10 +89,9 @@ header div p {
     justify-content: center;
 }
 
-.battle-result p {
+.battle-result-text p {
     margin: auto;
-    width: 50%;
-    text-decoration: underline solid green;
+    width: 100%;
     padding: 10px;
 }
 
