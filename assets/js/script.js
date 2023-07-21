@@ -27,8 +27,11 @@ function runGame() {
             console.log(resultMessage);
             break;
         default:
-            console.log('It\'s a tie! Play again.');
+            resultMessage = 'It\'s a tie! Play again.';
+            console.log(resultMessage);
     }
+
+    displayResult(userPlay, computerPlay, resultMessage);
 }
 
 function checkPlays(userPlay, computerPlay) {
@@ -152,7 +155,21 @@ function generateResultText(winner, loser) {
     return result;
 }
 
-function displayResult() { }
+function displayResult(userPlay, computerPlay, resultMessage) {
+    let html = `
+    <div class="battle-result">
+            <div class="battle-result-image">
+                <img src="assets/images/${userPlay}.jpg" alt="User choice">
+                <span>vs</span>
+                <img src="assets/images/${computerPlay}.jpg" alt="Computer choice">
+            </div>
+            <div class="battle-result-text">
+                <p>${resultMessage}</p>
+            </div>
+        </div>`;
+    let battleResult = document.getElementById("battle-section");
+    battleResult.innerHTML = html;
+}
 
 let buttons = document.getElementsByClassName("btn-play");
 for (let button of buttons) {
