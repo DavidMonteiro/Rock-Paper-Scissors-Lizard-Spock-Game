@@ -70,17 +70,11 @@ function getComputerPlay() {
 }
 
 //Generate the score section when the page initially loads
-function setScoreBoard() {
+function initiateScoreBoard() {
     userScore = 0;
     computerScore = 0;
 
-    let scoreBoard = document.getElementById("score-board");
-    scoreBoard.innerHTML = `
-        <p>Score: 
-            <spam>You ${userScore}</spam> - 
-            <spam>${computerScore} Computer</spam>
-        </p>`;
-    console.log("event is working ");
+    setScoreBoard();
 }
 function updateScoreBoard(winner) {
     if (winner === 1) {
@@ -89,12 +83,18 @@ function updateScoreBoard(winner) {
     else if (winner === 2) {
         computerScore += 1;
     }
+
+    setScoreBoard();
+}
+
+function setScoreBoard() {
     let scoreBoard = document.getElementById("score-board");
     scoreBoard.innerHTML = `
         <p>Score: 
             <spam>You ${userScore}</spam> - 
             <spam>${computerScore} Computer</spam>
         </p>`;
+
 }
 
 function generateResultText(winner, loser) {
@@ -172,7 +172,7 @@ function displayResult(userPlay, computerPlay, resultMessage) {
 }
 
 function resetGame() {
-    setScoreBoard();
+    initiateScoreBoard();
     let battleResult = document.getElementById("battle-section");
     battleResult.innerHTML = "";
 }
@@ -183,4 +183,4 @@ for (let button of buttons) {
 }
 
 let scoreBoard = document.getElementById("score-board");
-scoreBoard.addEventListener("DOMContentLoaded", setScoreBoard());
+scoreBoard.addEventListener("DOMContentLoaded", initiateScoreBoard());
