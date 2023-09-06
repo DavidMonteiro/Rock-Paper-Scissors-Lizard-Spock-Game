@@ -7,6 +7,7 @@ body {
 }
 
 /*Header section */
+
 header {
     display: flex;
     align-items: center;
@@ -147,4 +148,13 @@ header div p {
 
 .btn-reset:hover {
     background-color: #655DBB;
+}
+
+.result-txt {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
 }

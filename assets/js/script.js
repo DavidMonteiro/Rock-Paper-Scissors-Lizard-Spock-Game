@@ -199,14 +199,20 @@ scoreBoard.addEventListener("DOMContentLoaded", initiateScoreBoard());
 
 
 function endGame(winner) {
+    let gameMessage = "";
     if (winner === "User") {
-
+        gameMessage = "Congratulations! You won";
+        set_win_border();
     }
+    else {
+        gameMessage = "Oops, the computer won this round! Don't give up, try again!";
+        set_lost_border();
+    }
+
     let html = `
     <div class="battle-result">
-            <div class="battle-result-text">
-                <p>Congratulations!</p>
-                <p>You won</p>
+            <div class="result-txt">
+                <p class="result-txt">${gameMessage}</p>
             </div>
             <div id="reset-section">
                 <button id="reset-button" class="btn-reset" onclick="resetGame()">Play another Game</button>
@@ -219,9 +225,13 @@ function endGame(winner) {
 
 function set_win_border() {
     // Set the value of variable --resultBorder to green
-    cssRoot.style.setProperty('--resultBorder', '4px solid #green');
+    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
+    cssRoot.style.setProperty('--resultBorder', '4px solid #00ff00');
+    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
 }
 function set_lost_border() {
     // Set the value of variable --resultBorder to red)
-    cssRoot.style.setProperty('--resultBorder', '4px solid #red');
+    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
+    cssRoot.style.setProperty('--resultBorder', '4px solid #ff0000');
+    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
 }
