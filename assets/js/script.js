@@ -32,6 +32,13 @@ function runGame() {
     }
 
     displayResult(userPlay, computerPlay, resultMessage);
+
+    if (userScore > 4) {
+        endGame("User");
+    }
+    else if (computerScore > 4) {
+        endGame("Computer");
+    }
 }
 
 function checkPlays(userPlay, computerPlay) {
@@ -184,3 +191,26 @@ for (let button of buttons) {
 
 let scoreBoard = document.getElementById("score-board");
 scoreBoard.addEventListener("DOMContentLoaded", initiateScoreBoard());
+
+
+function endGame(winner) {
+    if (winner === "User") {
+
+    }
+    let html = `
+    <div class="battle-result">
+            <div class="battle-result-text">
+                <p>Congratulations!</p>
+                <p>You won</p>
+            </div>
+            <div id="reset-section">
+                <p>Press the button bellow to play again!</p>
+                <button id="reset-button" class="btn-reset" onclick="initiateScoreBoard()">Play another Game</button>
+            </div>
+        </div>`;
+    let gameResult = document.getElementById("battle-section");
+    gameResult.innerHTML = html;
+
+    alert(gameResultMessage);
+    resetGame();
+}
