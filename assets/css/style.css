@@ -151,6 +151,8 @@ header div p {
 }
 
 .result-txt {
+    align-items: center;
+    justify-content: center;
     margin: auto;
     width: 100%;
     padding: 10px;

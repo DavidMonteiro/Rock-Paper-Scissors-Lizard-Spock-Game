@@ -83,6 +83,8 @@ function initiateScoreBoard() {
     userScore = 0;
     computerScore = 0;
 
+    reset_border();
+
     let gameResult = document.getElementById("battle-section");
     gameResult.innerHTML = "";
 
@@ -220,18 +222,32 @@ function endGame(winner) {
         </div>`;
     let gameResult = document.getElementById("battle-section");
     gameResult.innerHTML = html;
-    set_win_border();
 }
 
 function set_win_border() {
     // Set the value of variable --resultBorder to green
-    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
-    cssRoot.style.setProperty('--resultBorder', '4px solid #00ff00');
-    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
+    try {
+        cssRoot.style.setProperty('--resultBorder', '4px solid #00ff00');
+    }
+    catch (error) {
+        console.error("Error setting property:", error);
+    }
 }
 function set_lost_border() {
     // Set the value of variable --resultBorder to red)
-    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
-    cssRoot.style.setProperty('--resultBorder', '4px solid #ff0000');
-    console.log(getComputedStyle(cssRoot).getPropertyValue('--resultBorder'));
+    try {
+        cssRoot.style.setProperty('--resultBorder', '4px solid #ff0000');
+    }
+    catch (error) {
+        console.error("Error setting property:", error);
+    }
+}
+function reset_border() {
+    // Reset the value of variable --resultBorder to blue)
+    try {
+        cssRoot.style.setProperty('--resultBorder', '4px solid #3E54AC');
+    }
+    catch (error) {
+        console.error("Error setting property:", error);
+    }
 }
