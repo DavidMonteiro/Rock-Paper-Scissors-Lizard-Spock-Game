@@ -1,4 +1,3 @@
-console.log("This is running :D");
 var userScore;
 var computerScore;
 
@@ -10,9 +9,6 @@ function runGame() {
         let userPlay = this.getAttribute("id");
         let computerPlay = getComputerPlay();
 
-        console.log('userplay: ', userPlay);
-        console.log('computerPlay: ', computerPlay);
-
         let result = checkPlays(userPlay, computerPlay);
         let resultMessage = "";
         updateScoreBoard(result);
@@ -20,17 +16,12 @@ function runGame() {
         switch (result) {
             case 1:
                 resultMessage = generateResultText(userPlay, computerPlay);
-                console.log(resultMessage);
-                console.log('You win!');
                 break;
             case 2:
                 resultMessage = generateResultText(computerPlay, userPlay);
-                console.log('Computer wins!');
-                console.log(resultMessage);
                 break;
             default:
                 resultMessage = 'It\'s a tie! Play again.';
-                console.log(resultMessage);
         }
 
         displayResult(userPlay, computerPlay, resultMessage);
