@@ -2,37 +2,39 @@ console.log("This is running :D");
 var userScore;
 var computerScore;
 
+var cssRoot = document.querySelector(':root');
 
 
 function runGame() {
-    let userPlay = this.getAttribute("id");
-    let computerPlay = getComputerPlay();
+    if (userScore < 5 || computerScore < 5) {
+        let userPlay = this.getAttribute("id");
+        let computerPlay = getComputerPlay();
 
-    console.log('userplay: ', userPlay);
-    console.log('computerPlay: ', computerPlay);
+        console.log('userplay: ', userPlay);
+        console.log('computerPlay: ', computerPlay);
 
-    let result = checkPlays(userPlay, computerPlay);
-    let resultMessage = "";
-    updateScoreBoard(result);
+        let result = checkPlays(userPlay, computerPlay);
+        let resultMessage = "";
+        updateScoreBoard(result);
 
-    switch (result) {
-        case 1:
-            resultMessage = generateResultText(userPlay, computerPlay);
-            console.log(resultMessage);
-            console.log('You win!');
-            break;
-        case 2:
-            resultMessage = generateResultText(computerPlay, userPlay);
-            console.log('Computer wins!');
-            console.log(resultMessage);
-            break;
-        default:
-            resultMessage = 'It\'s a tie! Play again.';
-            console.log(resultMessage);
+        switch (result) {
+            case 1:
+                resultMessage = generateResultText(userPlay, computerPlay);
+                console.log(resultMessage);
+                console.log('You win!');
+                break;
+            case 2:
+                resultMessage = generateResultText(computerPlay, userPlay);
+                console.log('Computer wins!');
+                console.log(resultMessage);
+                break;
+            default:
+                resultMessage = 'It\'s a tie! Play again.';
+                console.log(resultMessage);
+        }
+
+        displayResult(userPlay, computerPlay, resultMessage);
     }
-
-    displayResult(userPlay, computerPlay, resultMessage);
-
     if (userScore > 4) {
         endGame("User");
     }
@@ -80,6 +82,9 @@ function getComputerPlay() {
 function initiateScoreBoard() {
     userScore = 0;
     computerScore = 0;
+
+    let gameResult = document.getElementById("battle-section");
+    gameResult.innerHTML = "";
 
     setScoreBoard();
 }
@@ -204,13 +209,9 @@ function endGame(winner) {
                 <p>You won</p>
             </div>
             <div id="reset-section">
-                <p>Press the button bellow to play again!</p>
-                <button id="reset-button" class="btn-reset" onclick="initiateScoreBoard()">Play another Game</button>
+                <button id="reset-button" class="btn-reset" onclick="resetGame()">Play another Game</button>
             </div>
         </div>`;
     let gameResult = document.getElementById("battle-section");
     gameResult.innerHTML = html;
-
-    alert(gameResultMessage);
-    resetGame();
 }
