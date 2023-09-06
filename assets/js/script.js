@@ -6,7 +6,7 @@ var cssRoot = document.querySelector(':root');
 
 
 function runGame() {
-    if (userScore < 5 || computerScore < 5) {
+    if (userScore < 5 && computerScore < 5) {
         let userPlay = this.getAttribute("id");
         let computerPlay = getComputerPlay();
 
