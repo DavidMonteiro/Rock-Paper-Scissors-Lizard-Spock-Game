@@ -1,3 +1,7 @@
+:root {
+    --resultBorder: 2px solid #3E54AC;
+}
+
 body {
     background: FloralWhite;
 }
@@ -71,7 +75,7 @@ header div p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid #3E54AC;
+    border: var(--resultBorder);
     border-radius: 50px;
     padding: 20px;
     margin: 50px;

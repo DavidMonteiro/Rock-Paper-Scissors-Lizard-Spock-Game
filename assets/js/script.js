@@ -214,4 +214,14 @@ function endGame(winner) {
         </div>`;
     let gameResult = document.getElementById("battle-section");
     gameResult.innerHTML = html;
+    set_win_border();
+}
+
+function set_win_border() {
+    // Set the value of variable --resultBorder to green
+    cssRoot.style.setProperty('--resultBorder', '4px solid #green');
+}
+function set_lost_border() {
+    // Set the value of variable --resultBorder to red)
+    cssRoot.style.setProperty('--resultBorder', '4px solid #red');
 }
